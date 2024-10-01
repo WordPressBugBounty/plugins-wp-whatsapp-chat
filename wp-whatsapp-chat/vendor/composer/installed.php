@@ -3,7 +3,7 @@
         'name' => 'quadlayers/wp-whatsapp-chat',
         'pretty_version' => 'v7.4.6',
         'version' => '7.4.6.0',
-        'reference' => '612d01a54bb1058786cb84118fbb9d9f41f6e610',
+        'reference' => '67e3d6cdbe50c5441ac9dcd39e56f38d85f32fe9',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -123,7 +123,7 @@
         'quadlayers/wp-whatsapp-chat' => array(
             'pretty_version' => 'v7.4.6',
             'version' => '7.4.6.0',
-            'reference' => '612d01a54bb1058786cb84118fbb9d9f41f6e610',
+            'reference' => '67e3d6cdbe50c5441ac9dcd39e56f38d85f32fe9',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
