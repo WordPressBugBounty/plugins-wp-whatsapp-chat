@@ -305,12 +305,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/franmastromarino/wp-notice-plugin-promote.git",
-                "reference": "b7e86c63dcc1cb6106b1b99e99a0e8f943d015c8"
+                "reference": "e947d41c606f1ab679518d87f2b51230a9d74c92"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/franmastromarino/wp-notice-plugin-promote/zipball/b7e86c63dcc1cb6106b1b99e99a0e8f943d015c8",
-                "reference": "b7e86c63dcc1cb6106b1b99e99a0e8f943d015c8",
+                "url": "https://api.github.com/repos/franmastromarino/wp-notice-plugin-promote/zipball/e947d41c606f1ab679518d87f2b51230a9d74c92",
+                "reference": "e947d41c606f1ab679518d87f2b51230a9d74c92",
                 "shasum": ""
             },
             "require": {
@@ -321,7 +321,7 @@
                 "phpcompatibility/phpcompatibility-wp": "^2.1.0",
                 "wp-coding-standards/wpcs": "^2.3.0"
             },
-            "time": "2024-10-25T13:53:55+00:00",
+            "time": "2024-11-27T20:38:40+00:00",
             "default-branch": true,
             "type": "jetpack-library",
             "extra": {
@@ -352,7 +352,7 @@
             ],
             "support": {
                 "issues": "https://github.com/franmastromarino/wp-notice-plugin-promote/issues",
-                "source": "https://github.com/franmastromarino/wp-notice-plugin-promote/tree/1.1.6"
+                "source": "https://github.com/franmastromarino/wp-notice-plugin-promote/tree/main"
             },
             "install-path": "../../jetpack_vendor/quadlayers/wp-notice-plugin-promote"
         },
