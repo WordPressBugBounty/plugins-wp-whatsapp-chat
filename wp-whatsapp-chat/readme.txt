@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.7
-Stable tag: 7.5.3
+Stable tag: 7.6.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,8 +137,11 @@ Don't use: +001-(555)1234567
 
 == Changelog ==
 
-= 7.5.3 =
-* Fix translations
+= 7.6.1 =
+* Revert changes in 7.6.0
+
+= 7.6.0 =
+* New WhatsApp Chat UI
 
 = 7.5.2 =
 * Fix load textdomain alert
