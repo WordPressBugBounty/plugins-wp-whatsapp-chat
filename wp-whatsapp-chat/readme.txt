@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 8.1.9
+Stable tag: 8.2.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -164,11 +164,14 @@ Don't use: +001-(555)1234567
 
 == Changelog ==
 
+= 8.2.0 =
+* Improve: WooCommerce product pages now use dynamic product variables by default
+* Improve: WooCommerce archive pages now use site-specific variables by default
+
 = 8.1.9 =
 * Feat: Add WooCommerce Archives button support (shop, categories, tags, brands)
 * Feat: Add WooCommerce product dynamic variables (PRODUCT_TITLE, PRODUCT_URL, PRODUCT_PRICE, PRODUCT_SKU, PRODUCT_ID)
 * Feat: Add device visibility control for WooCommerce buttons
-* Fix: Improve variable replacement in admin REST API requests
 
 = 8.1.8 =
 * Feat: Add admin menu better tooltips & helpers

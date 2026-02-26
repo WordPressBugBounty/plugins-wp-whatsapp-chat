@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'quadlayers/wp-whatsapp-chat',
-        'pretty_version' => 'v8.1.9',
-        'version' => '8.1.9.0',
-        'reference' => 'a9c3d0313c8ddc67cb9ecf7c0ccca651f68f0766',
+        'pretty_version' => 'v8.2.0',
+        'version' => '8.2.0.0',
+        'reference' => '17d3e2a09933cd8ed16f9c3fd0ff7879d77789a7',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -132,9 +132,9 @@
             'dev_requirement' => false,
         ),
         'quadlayers/wp-whatsapp-chat' => array(
-            'pretty_version' => 'v8.1.9',
-            'version' => '8.1.9.0',
-            'reference' => 'a9c3d0313c8ddc67cb9ecf7c0ccca651f68f0766',
+            'pretty_version' => 'v8.2.0',
+            'version' => '8.2.0.0',
+            'reference' => '17d3e2a09933cd8ed16f9c3fd0ff7879d77789a7',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
