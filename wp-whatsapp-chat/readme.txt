@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 8.2.1
+Stable tag: 8.3.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -48,6 +48,9 @@ Social Chat also allows you to include a box to show some contact information an
 > * Vertical and horizontal position
 > * Custom button text
 > * Custom user message
+> * WooCommerce product page integration
+> * WooCommerce archive pages integration
+> * Dynamic message variables
 
 == WhatsApp Message Dynamic Variables ==
 Synce version 5.0.6 you're able use variables in your WhatsApp Button or contact messages.
@@ -92,6 +95,36 @@ Since version 8.1.9 you can display a customizable WhatsApp button on WooCommerc
 
 You can configure a custom message, button style, and position for each archive type. The button supports all WooCommerce product variables, making it easy for customers to inquire about products directly from archive pages.
 
+== 🎁 New!! WooCommerce WhatsApp Payment Gateway (Premium) ==
+
+Since version 8.3.0 you can enable WhatsApp as a payment method in WooCommerce checkout! This powerful **premium** feature allows customers to:
+
+> * Select WhatsApp Order as a payment method at checkout
+> * Automatically send order details to your WhatsApp number
+> * Customize order messages with dynamic variables (ORDER_ID, ORDER_TOTAL, CUSTOMER_NAME, ORDER_PRODUCTS, etc.)
+> * Auto-redirect customers to WhatsApp after placing an order
+> * Configure custom order status, redirect delay, and visibility settings
+> * Support for both individual phone numbers and WhatsApp groups
+> * Full compatibility with WooCommerce Blocks checkout
+
+Perfect for businesses that want to confirm payments via WhatsApp or provide a more personal checkout experience. All order information is automatically formatted and sent to your WhatsApp, making order management seamless.
+
+**WooCommerce Order Message Variables:**
+{ORDER_ID} ➡ Order ID
+{ORDER_NUMBER} ➡ Order Number
+{ORDER_TOTAL} ➡ Order Total Amount
+{ORDER_DATE} ➡ Order Date
+{ORDER_TIME} ➡ Order Time
+{ORDER_STATUS} ➡ Order Status
+{ORDER_URL} ➡ View Order URL
+{ORDER_PRODUCTS} ➡ List of ordered products
+{CUSTOMER_NAME} ➡ Customer Full Name
+{CUSTOMER_EMAIL} ➡ Customer Email
+{CUSTOMER_PHONE} ➡ Customer Phone
+{BILLING_ADDRESS} ➡ Billing Address
+{SHIPPING_ADDRESS} ➡ Shipping Address
+{PAYMENT_METHOD} ➡ Payment Method Title
+
 == WhatsApp Premium ==
 The premium version of the Social Chat plugin allows you to include multiple team member agents, distinguishing their names and labels inside. The contact box helps to provide direct contacts to the different support areas of your site.
 A new option to display a chatbox for each agent is included. This box will be displayed when the user clicks on the WhatsApp contact, and you can define custom message to be shown from each contact. Your users will be able to type the message that will be sent to the WhatsApp contact phone.
@@ -114,6 +147,9 @@ Build intelligent chatbots with our visual flow builder - no coding required! Cr
 > * Google Analytics v3 events
 > * Google Analytics v4 events
 > * WhatsApp group support
+> * WooCommerce WhatsApp Payment Gateway
+> * Auto-redirect to WhatsApp after order placement
+> * WooCommerce Blocks checkout compatibility
 
 == WhatsApp Button Installation ==
 1. Go to the Plugins Menu in WordPress
@@ -163,6 +199,15 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.3.0 =
+* Feat: Add WooCommerce WhatsApp Payment Gateway
+* Feat: Allow customers to select WhatsApp as payment method at checkout
+* Feat: Auto-send order details to WhatsApp with customizable messages
+* Feat: Support for WooCommerce order dynamic variables (ORDER_ID, ORDER_TOTAL, CUSTOMER_NAME, etc.)
+* Feat: Auto-redirect to WhatsApp after order placement with configurable delay
+* Feat: Full WooCommerce Blocks checkout compatibility
+* Feat: Gateway configuration UI in admin settings panel
 
 = 8.2.1 =
 * Fix: Update Bot API endpoints
