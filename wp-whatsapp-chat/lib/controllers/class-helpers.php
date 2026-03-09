@@ -54,6 +54,12 @@ class Helpers {
 			$default_contact['id'] = null;
 		}
 
+		$ab_upgrade_group = get_option( 'qlwapp_ab_upgrade_group' );
+		if ( false === $ab_upgrade_group ) {
+			$ab_upgrade_group = ( wp_rand( 0, 1 ) === 0 ) ? 'control' : 'variant';
+			update_option( 'qlwapp_ab_upgrade_group', $ab_upgrade_group, true );
+		}
+
 		wp_localize_script(
 			'qlwapp-helpers',
 			'qlwappHelpers',
@@ -79,6 +85,7 @@ class Helpers {
 				'QLWAPP_DEFAULT_SETTINGS'               => $default_settings,
 				'QLWAPP_DEFAULT_WOOCOMMERCE'            => $default_woocommerce,
 				'QLWAPP_DEFAULT_WOOCOMMERCE_ARCHIVES'   => $default_woocommerce_archives,
+				'QLWAPP_AB_UPGRADE_GROUP'               => 'variant',
 			)
 		);
 	}

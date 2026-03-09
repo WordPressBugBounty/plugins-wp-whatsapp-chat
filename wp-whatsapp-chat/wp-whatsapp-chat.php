@@ -4,7 +4,7 @@
  * Plugin Name:             Social Chat
  * Description:             Social Chat allows your visitors to contact you or your team through WhatsApp with a single click.
  * Plugin URI:              https://quadlayers.com/products/whatsapp-chat/
- * Version:                 8.3.0
+ * Version:                 8.3.1
  * Text Domain:             wp-whatsapp-chat
  * Author:                  QuadLayers
  * Author URI:              https://quadlayers.com
