@@ -85,7 +85,7 @@ class Helpers {
 				'QLWAPP_DEFAULT_SETTINGS'               => $default_settings,
 				'QLWAPP_DEFAULT_WOOCOMMERCE'            => $default_woocommerce,
 				'QLWAPP_DEFAULT_WOOCOMMERCE_ARCHIVES'   => $default_woocommerce_archives,
-				'QLWAPP_AB_UPGRADE_GROUP'               => 'variant',
+				'QLWAPP_AB_UPGRADE_GROUP'               => $ab_upgrade_group,
 			)
 		);
 	}

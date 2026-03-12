@@ -5,11 +5,11 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 8.3.1
+Stable tag: 8.3.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 10.5
+WC tested up to: 10.6
 
 WhatsApp Chat🔥 allows you to enhance customer engagement! Integrate "WhatsApp" or "WhatsApp Business" with a single click.
 
@@ -199,6 +199,12 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+= 8.3.2 =
+* Feat: Add contact type icon badge on avatar (phone, group, bot)
+* Fix: Prevent user first message in contact bots
+* Fix: Prevent page scroll when scrolling the chat message list
+* Fix: Unify Button and Visibility settings save/cancel into a single explicit action
+* Fix: Prevent UI from getting stuck in loading state on save error
 
 = 8.3.1 =
 * Feat: Unify welcome and premium page
