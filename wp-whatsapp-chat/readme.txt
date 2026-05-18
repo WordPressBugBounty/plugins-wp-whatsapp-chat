@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 8.4.7
+Stable tag: 8.4.8
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -199,6 +199,10 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.4.8 =
+* Fix: Email verification link not verifying account due to token lost before modal render
+* Fix: Token persisting after verification causing stale verification view on popover reopen
 
 = 8.4.7 =
 * Fix: Clear token from URL after email verification to prevent re-showing verification form
