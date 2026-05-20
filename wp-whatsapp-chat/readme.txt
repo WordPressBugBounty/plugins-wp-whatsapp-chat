@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 6.9
-Stable tag: 8.4.9
+Stable tag: 8.5.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -200,9 +200,13 @@ Don't use: +001-(555)1234567
 
 == Changelog ==
 
+= 8.5.0 =
+* Feat: Add onboarding modal for [Quick.Bot](https://quick.bot/) integration
+
 = 8.4.9 =
 * Feat: Add support chat button for in-app assistance
 * Improvement: Improve Alert components responsive layout for mobile devices
+* Fix: Add chevron icon to all Alert action buttons
 
 = 8.4.8 =
 * Fix: Email verification link not verifying account due to token lost before modal render
