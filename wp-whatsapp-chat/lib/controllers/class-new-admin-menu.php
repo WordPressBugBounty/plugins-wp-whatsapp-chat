@@ -44,6 +44,7 @@ class New_Admin_Menu {
 				'QLWAPP_DISPLAY_POST_TYPES' => $entity_options->get_entries(),
 				'QLWAPP_DISPLAY_TAXONOMIES' => $entity_options->get_taxonomies(),
 				'QUICK_BOT_URL'             => 'https://app.quick.bot',
+				'QUICK_BOT_VIEWER_URL'      => 'https://viewer.quick.bot',
 				'WP_VERSION'                => $wp_version,
 			)
 		);
