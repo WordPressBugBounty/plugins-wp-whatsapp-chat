@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.0
-Stable tag: 8.5.1
+Stable tag: 8.5.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -199,6 +199,10 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.5.2 =
+* Fix: WP editor compatibility with WordPress 7
+* Improvement: Responsive bots and contacts tables with unified status tags
 
 = 8.5.1 =
 * WordPress 7.0 compatibility
