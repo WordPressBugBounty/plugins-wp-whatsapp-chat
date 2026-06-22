@@ -19,6 +19,7 @@ class New_Admin_Menu {
 		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
 		add_action( 'admin_menu', array( $this, 'add_menu' ) );
 		add_action( 'admin_init', array( $this, 'remove_notices' ) );
+		add_action( 'admin_footer', array( $this, 'render_support_bot' ) );
 	}
 
 	public function register_scripts() {
@@ -179,6 +180,77 @@ class New_Admin_Menu {
 			"{$menu_slug}&tab=analytics",
 			'__return_null'
 		);
+	}
+
+	/**
+	 * Render the quick.bot support assistant bubble in the admin footer.
+	 *
+	 * Replaces the former React-based <SupportChatButton /> iframe. Uses the
+	 * quick.bot embed SDK (QuickBot.initBubble) so we can pass contextual
+	 * prefilled variables (user, plan, screen, versions, UTM attribution) to
+	 * the support bot.
+	 *
+	 * Only loads on the plugin admin page, matching the previous behaviour.
+	 */
+	public function render_support_bot() {
+
+		if ( ! isset( $_GET['page'] ) || self::get_menu_slug() !== $_GET['page'] ) {
+			return;
+		}
+
+		// quick.bot public id (the slug from viewer.quick.bot/<publicId>).
+		$public_id = 'quadlayers-plugin-n0lchjj';
+
+		// URL of the quick.bot embed SDK that exposes the default `QuickBot` export.
+		$sdk_url = 'https://cdn.jsdelivr.net/npm/@quick.bot/js@latest/dist/web.js';
+
+		global $wp_version;
+
+		$current_user = wp_get_current_user();
+		$screen       = get_current_screen();
+		$is_premium   = class_exists( 'QuadLayers\\QLWAPP_PRO\\Controllers\\New_Admin_Menu' );
+		$screen_id    = $screen ? $screen->id : 'unknown';
+
+		$vars = array(
+			// Context.
+			'user_name'      => $current_user->display_name,
+			'user_email'     => $current_user->user_email,
+			'plan'           => $is_premium ? 'premium' : 'free',
+			'current_screen' => $screen_id,
+			'wp_version'     => $wp_version,
+			'php_version'    => phpversion(),
+			'plugin_version' => defined( 'QLWAPP_PLUGIN_VERSION' ) ? QLWAPP_PLUGIN_VERSION : 'unknown',
+
+			// UTM attribution to mark the origin of the conversation.
+			'utm_source'     => 'qlwapp_plugin',
+			'utm_medium'     => 'admin',
+			'utm_campaign'   => 'support_bot',
+			'utm_content'    => $screen_id,
+		);
+		?>
+		<script type="module">
+			import QuickBot from <?php echo wp_json_encode( $sdk_url ); ?>;
+			QuickBot.initBubble( {
+				publicId: <?php echo wp_json_encode( $public_id ); ?>,
+				prefilledVariables: <?php echo wp_json_encode( $vars ); ?>,
+				previewMessage: {
+					message: <?php echo wp_json_encode( __( 'Hi! Need help?', 'wp-whatsapp-chat' ) ); ?>,
+      				subtext: <?php echo wp_json_encode( __( 'We\'re here to assist you 💚', 'wp-whatsapp-chat' ) ); ?>,
+					avatarUrl: 'https://2.gravatar.com/avatar/8addf317f80adb7b1e3219184d051e86273d5291bd6a3ab303671c3d0c04a835?size=100&d=initials',
+				},
+				style: {
+					button: {
+						backgroundColor: '#01a952',
+						iconColor: '#ffffff',
+						layout: 'bubble',
+						animation: 'pulse',
+						notificationBubble: true,
+						notificationBubbleAnimation: 'shakeY',
+					},
+				},
+			} );
+		</script>
+		<?php
 	}
 
 	public function remove_notices() {
