@@ -235,7 +235,7 @@ class New_Admin_Menu {
 				prefilledVariables: <?php echo wp_json_encode( $vars ); ?>,
 				previewMessage: {
 					message: <?php echo wp_json_encode( __( 'Hi! Need help?', 'wp-whatsapp-chat' ) ); ?>,
-      				subtext: <?php echo wp_json_encode( __( 'We\'re here to assist you 💚', 'wp-whatsapp-chat' ) ); ?>,
+						subtext: <?php echo wp_json_encode( __( 'We\'re here to assist you 💚', 'wp-whatsapp-chat' ) ); ?>,
 					avatarUrl: 'https://2.gravatar.com/avatar/8addf317f80adb7b1e3219184d051e86273d5291bd6a3ab303671c3d0c04a835?size=100&d=initials',
 				},
 				style: {

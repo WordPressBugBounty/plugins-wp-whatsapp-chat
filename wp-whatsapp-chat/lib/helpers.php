@@ -171,19 +171,36 @@ function qlwapp_get_timezone_options() {
 
 	$timezone_html = wp_timezone_choice( null, get_user_locale() );
 
-	// Parsear el HTML para convertirlo en un array de objetos
-	preg_match_all( '/<option value="([^"]*)"( selected="selected")?>([^<]*)<\/option>/', $timezone_html, $matches, PREG_SET_ORDER );
+	/*
+	 * Parse the <option> tags into an array of objects.
+	 *
+	 * The attributes inside each <option> can appear in any order and WordPress
+	 * may add extra attributes (e.g. dir="auto"), so we capture the whole tag
+	 * and extract the value/selected attributes individually instead of relying
+	 * on a fixed attribute order.
+	 */
+	preg_match_all( '/<option\b([^>]*)>([^<]*)<\/option>/', $timezone_html, $matches, PREG_SET_ORDER );
 
-	$timezones = array_map(
-		function ( $match ) {
-			return array(
-				'value'    => $match[1],
-				'label'    => $match[3],
-				'selected' => ! empty( $match[2] ), // true si la opción está seleccionada
-			);
-		},
-		$matches
-	);
+	$timezones = array();
+
+	foreach ( $matches as $match ) {
+		$attributes = $match[1];
+		$label      = $match[2];
+
+		preg_match( '/value="([^"]*)"/', $attributes, $value_match );
+		$value = isset( $value_match[1] ) ? $value_match[1] : '';
+
+		// Skip the placeholder "Select a city" option (empty value).
+		if ( '' === $value ) {
+			continue;
+		}
+
+		$timezones[] = array(
+			'value'    => $value,
+			'label'    => $label,
+			'selected' => false !== strpos( $attributes, 'selected' ),
+		);
+	}
 
 	return $timezones;
 }
