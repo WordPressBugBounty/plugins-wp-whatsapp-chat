@@ -5,11 +5,11 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.0
-Stable tag: 8.5.8
+Stable tag: 8.5.9
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 10.7
+WC tested up to: 10.9
 
 WhatsApp Chat🔥 allows you to enhance customer engagement! Integrate "WhatsApp" or "WhatsApp Business" with a single click.
 
@@ -199,6 +199,9 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.5.9 =
+* Fix: Contact preview click target now reflects unsaved number changes
 
 = 8.5.8 =
 * Improvement: move contact data from Button to Contacts and add migration
