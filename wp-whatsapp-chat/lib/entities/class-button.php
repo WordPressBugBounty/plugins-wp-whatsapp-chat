@@ -20,10 +20,10 @@ class Button extends SingleEntity {
 	// layers, not duplicated data: the contact-data refactor that moved
 	// phone/message/type/group/whatsapp_link_type to Contact did not apply
 	// to availability — those answer different questions.
-	public $timefrom   = '00:00';
-	public $timeto     = '00:00';
-	public $timedays   = array();
-	public $timezone   = '';
+	public $timefrom = '00:00';
+	public $timeto   = '00:00';
+	public $timedays = array();
+	public $timezone = '';
 	// Whitelist constrained to hidden|readonly in Models_Button — with_status
 	// is meaningless at the button level (it's a per-contact status bubble).
 	public $visibility = 'readonly';

@@ -71,7 +71,7 @@ class Contacts {
 	}
 
 	public function update( int $id, array $contact ) {
-		$entity = $this->repository->update( $id, $this->sanitize_value_data( $contact ) );
+		$entity           = $this->repository->update( $id, $this->sanitize_value_data( $contact ) );
 		$this->cached_all = null;
 		if ( $entity ) {
 			return $entity->getProperties();
@@ -83,7 +83,7 @@ class Contacts {
 			unset( $contact['id'] );
 		}
 
-		$entity = $this->repository->create( $this->sanitize_value_data( $contact ) );
+		$entity           = $this->repository->create( $this->sanitize_value_data( $contact ) );
 		$this->cached_all = null;
 
 		if ( $entity ) {
