@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.0
-Stable tag: 8.6.0
+Stable tag: 8.6.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -199,6 +199,9 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.6.1 =
+* Fix: Harden quick.bot auth popup handshake (normalized origin validation and centralized message contract)
 
 = 8.6.0 =
 * Improvement: Replace bots API integration with embedded quick.bot iframe
