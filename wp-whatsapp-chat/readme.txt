@@ -4,12 +4,12 @@ Donate link: https://quadlayers.com/products/whatsapp-chat/
 Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to chat
 Requires at least: 4.7
 Requires PHP: 5.6
-Tested up to: 7.0
-Stable tag: 8.6.1
+Tested up to: 7.1
+Stable tag: 8.6.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 10.9
+WC tested up to: 11.0
 
 WhatsApp Chat🔥 allows you to enhance customer engagement! Integrate "WhatsApp" or "WhatsApp Business" with a single click.
 
@@ -199,6 +199,9 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.6.2 =
+* fix: WooCommerce and WordPress compatibility
 
 = 8.6.1 =
 * Fix: Harden quick.bot auth popup handshake (normalized origin validation and centralized message contract)
