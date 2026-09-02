@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 8.6.3
+Stable tag: 8.6.4
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -199,6 +199,9 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.6.4 =
+* Fix: admin page not rendering because of a broken minified build (pin terser >= 5.51.2 and lock dependencies in CI)
 
 = 8.6.3 =
 * Security: Fix stored XSS through the chat box consent message, header and footer (CVE-2026-18404)
