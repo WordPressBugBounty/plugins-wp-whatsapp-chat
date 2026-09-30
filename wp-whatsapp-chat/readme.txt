@@ -5,11 +5,11 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 8.6.4
+Stable tag: 8.6.5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
-WC tested up to: 11.0
+WC tested up to: 11.1
 
 WhatsApp Chat🔥 allows you to enhance customer engagement! Integrate "WhatsApp" or "WhatsApp Business" with a single click.
 
@@ -199,6 +199,9 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.6.5 =
+* WooCommerce 11.1 compatibility
 
 = 8.6.4 =
 * Fix: admin page not rendering because of a broken minified build (pin terser >= 5.51.2 and lock dependencies in CI)
