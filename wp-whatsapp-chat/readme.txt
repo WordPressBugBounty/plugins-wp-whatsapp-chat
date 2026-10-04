@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 8.6.5
+Stable tag: 8.6.6
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -199,6 +199,11 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.6.6 =
+* Fix: chat box texts ("Available from %1$s to %2$s", "Available on %s", day names, Online/Offline, etc.) can now be translated through translate.wordpress.org and Loco Translate
+* Fix: admin panel now loads its existing JavaScript translations
+* Fix: validate contact availability hours (HH:MM) to avoid wrong availability messages
 
 = 8.6.5 =
 * WooCommerce 11.1 compatibility
