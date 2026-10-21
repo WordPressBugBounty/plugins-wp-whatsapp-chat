@@ -26,13 +26,26 @@ class Frontend {
 			},
 			10
 		);
-		add_filter( 'litespeed_optm_js_defer_exc', array( __CLASS__, 'litespeed_exclude' ) );
-		add_filter( 'litespeed_optm_js_exc', array( __CLASS__, 'litespeed_exclude' ) );
+		add_filter( 'litespeed_optm_js_defer_exc', array( __CLASS__, 'litespeed_exclude_js' ) );
+		add_filter( 'litespeed_optm_js_exc', array( __CLASS__, 'litespeed_exclude_js' ) );
 		add_filter( 'litespeed_optm_css_exc', array( __CLASS__, 'litespeed_exclude' ) );
 	}
 
 	public static function litespeed_exclude( $excludes ) {
 		$excludes[] = 'wp-whatsapp-chat/build/frontend';
+		return $excludes;
+	}
+
+	/**
+	 * Also keep core wp-hooks / wp-i18n and the inline locale data that
+	 * wp_set_script_translations() prints ("wp-whatsapp-chat" domain) out of
+	 * LiteSpeed's defer/delay/combine, so the chat renders translated on load.
+	 */
+	public static function litespeed_exclude_js( $excludes ) {
+		$excludes   = self::litespeed_exclude( $excludes );
+		$excludes[] = 'wp-includes/js/dist/hooks';
+		$excludes[] = 'wp-includes/js/dist/i18n';
+		$excludes[] = '"wp-whatsapp-chat"';
 		return $excludes;
 	}
 
@@ -58,10 +71,12 @@ class Frontend {
 		wp_register_script(
 			'qlwapp-frontend',
 			plugins_url( '/build/frontend/js/index.js', QLWAPP_PLUGIN_FILE ),
-			$frontend['dependencies'],
+			array_merge( $frontend['dependencies'], array( 'wp-i18n' ) ),
 			$frontend['version'],
 			true
 		);
+
+		wp_set_script_translations( 'qlwapp-frontend', 'wp-whatsapp-chat' );
 
 		wp_register_style(
 			'qlwapp-frontend',
@@ -157,9 +172,11 @@ class Frontend {
 	/**
 	 * Strings used by the frontend React bundle, keyed by their English original.
 	 *
-	 * The frontend bundle has no wp-i18n dependency (see packages/frontend/helpers/i18n.js),
-	 * so its strings are translated here, where make-pot can extract them for
-	 * translate.wordpress.org and Loco Translate, and passed through `data-i18n`.
+	 * The bundle reads its translations from wp.i18n (JSON files loaded by
+	 * wp_set_script_translations()). This map, passed through `data-i18n`, is the
+	 * fallback for sites translated through .mo files only, such as Loco Translate
+	 * translations saved before the JSON files existed
+	 * (see packages/frontend/helpers/i18n.js).
 	 *
 	 * @return array<string, string>
 	 */
