@@ -255,7 +255,7 @@ class Frontend {
 		if ( is_array( $primary_contact ) && is_array( $atts ) ) {
 			$contact_overrides = array_intersect_key(
 				$atts,
-				array_flip( array( 'phone', 'message', 'type', 'group', 'whatsapp_link_type' ) )
+				array_flip( array( 'phone', 'username', 'message', 'type', 'group', 'whatsapp_link_type' ) )
 			);
 			if ( ! empty( $contact_overrides ) ) {
 				// Normalise the override phone like the model/migration do, so
@@ -264,6 +264,11 @@ class Frontend {
 				if ( isset( $contact_overrides['phone'] ) ) {
 					$contact_overrides['phone'] = qlwapp_format_phone( $contact_overrides['phone'] );
 				}
+				// `[whatsapp username="@mybusiness"]` implies the username type.
+				if ( isset( $contact_overrides['username'] ) && ! isset( $contact_overrides['type'] ) ) {
+					$contact_overrides['type'] = 'username';
+				}
+				$contact_overrides = qlwapp_sanitize_contact_username( $contact_overrides );
 				$primary_contact = array_merge( $primary_contact, $contact_overrides );
 			}
 		}

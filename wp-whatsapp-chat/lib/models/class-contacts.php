@@ -202,6 +202,8 @@ class Contacts {
 			}
 		}
 
+		$value_data = qlwapp_sanitize_contact_username( $value_data );
+
 		if ( isset( $value_data['whatsapp_link_type'] ) && ! in_array( $value_data['whatsapp_link_type'], array( 'api', 'web' ), true ) ) {
 			$value_data['whatsapp_link_type'] = 'web';
 		}
