@@ -201,7 +201,7 @@ class New_Admin_Menu {
 		}
 
 		// quick.bot public id (the slug from viewer.quick.bot/<publicId>).
-		$public_id = 'quadlayers-plugin-n0lchjj';
+		$public_id = 'quadlayers-support';
 
 		// URL of the quick.bot embed SDK that exposes the default `QuickBot` export.
 		$sdk_url = 'https://cdn.jsdelivr.net/npm/@quick.bot/js@latest/dist/web.js';

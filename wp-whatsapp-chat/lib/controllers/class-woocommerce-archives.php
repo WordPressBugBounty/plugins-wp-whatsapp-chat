@@ -3,9 +3,6 @@
 namespace QuadLayers\QLWAPP\Controllers;
 
 use QuadLayers\QLWAPP\Models\WooCommerce_Archives as Models_WooCommerceArchives;
-use QuadLayers\QLWAPP\Models\Box as Models_Box;
-use QuadLayers\QLWAPP\Models\Display as Models_Display;
-use QuadLayers\QLWAPP\Models\Scheme as Models_Scheme;
 
 class WooCommerce_Archives {
 
@@ -55,20 +52,7 @@ class WooCommerce_Archives {
 	}
 
 	public function archive_button() {
-
-		$button  = Models_WooCommerceArchives::instance()->get();
-		$display = Models_Display::instance()->get();
-		$box     = Models_Box::instance()->get();
-		$scheme  = Models_Scheme::instance()->get();
-
-		$style = Frontend::get_scheme_css_properties( $scheme );
-
-		$display = htmlentities( wp_json_encode( $display ), ENT_QUOTES, 'UTF-8' );
-		$button  = htmlentities( wp_json_encode( $button ), ENT_QUOTES, 'UTF-8' );
-		$box     = htmlentities( wp_json_encode( $box ), ENT_QUOTES, 'UTF-8' );
-
-		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo '<div class="qlwapp qlwapp--woocommerce" style="' . $style . '" data-display="' . $display . '" data-button="' . $button . '" data-box="' . $box . '"></div>';
+		WooCommerce::render_button( Models_WooCommerceArchives::instance()->get() );
 	}
 
 	public static function instance() {

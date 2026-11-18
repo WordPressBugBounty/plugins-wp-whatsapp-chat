@@ -36,20 +36,32 @@ class WooCommerce {
 	}
 
 	public function product_button( $product ) {
+		self::render_button( Models_WooCommerce::instance()->get() );
+	}
 
-		$button  = Models_WooCommerce::instance()->get();
+	/**
+	 * Prints the container the frontend app mounts a WooCommerce button on.
+	 *
+	 * Shared by the product and archive buttons.
+	 *
+	 * @param array $button WooCommerce button settings, with the product placeholders already replaced.
+	 */
+	public static function render_button( array $button ) {
+
 		$display = Models_Display::instance()->get();
 		$box     = Models_Box::instance()->get();
 		$scheme  = Models_Scheme::instance()->get();
 
 		$style = Frontend::get_scheme_css_properties( $scheme );
 
-		$display = htmlentities( wp_json_encode( $display ), ENT_QUOTES, 'UTF-8' );
+		// The WooCommerce button carries its own contact data (type, phone,
+		// username, group, message), so it is also the toggle's primary contact.
 		$button  = htmlentities( wp_json_encode( $button ), ENT_QUOTES, 'UTF-8' );
+		$display = htmlentities( wp_json_encode( $display ), ENT_QUOTES, 'UTF-8' );
 		$box     = htmlentities( wp_json_encode( $box ), ENT_QUOTES, 'UTF-8' );
 
 		// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		echo '<div class="qlwapp qlwapp--woocommerce" style="' . $style . '" data-display="' . $display . '" data-button="' . $button . '" data-box="' . $box . '"></div>';
+		echo '<div class="qlwapp qlwapp--woocommerce" style="' . $style . '" data-primary-contact="' . $button . '" data-display="' . $display . '" data-button="' . $button . '" data-box="' . $box . '"></div>';
 	}
 
 	public static function instance() {

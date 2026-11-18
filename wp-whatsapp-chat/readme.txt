@@ -5,7 +5,7 @@ Tags: whatsapp, whatsapp business, whatsapp chat, woocommerce whatsapp, click to
 Requires at least: 4.7
 Requires PHP: 5.6
 Tested up to: 7.1
-Stable tag: 8.7.0
+Stable tag: 8.7.2
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 WC requires at least: 4.0
@@ -206,6 +206,12 @@ Don't use: +001-(555)1234567
 * Brazilian Portuguese (thanks to [Dionizio Bach](@djio))
 
 == Changelog ==
+
+= 8.7.2 =
+* Update: the support chat in the plugin dashboard now connects to the new QuadLayers support assistant
+
+= 8.7.1 =
+* Fix: WooCommerce product and archive buttons were not displayed even with "Show in all devices" selected
 
 = 8.7.0 =
 * Feat: new "Username" contact type, let visitors chat with your WhatsApp Business @username instead of a phone number (contacts, button, WooCommerce product and archive buttons, WooCommerce payment gateway and the [whatsapp username="..."] shortcode)
